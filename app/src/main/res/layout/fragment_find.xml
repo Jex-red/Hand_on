@@ -1,0 +1,160 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.xsy.hands_on.FindFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ViewFlipper
+
+                    android:id="@+id/viewFlipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:flipInterval="3000"
+                    android:inAnimation="@anim/right_in"
+                    android:outAnimation="@anim/right_out">
+
+                    <include layout="@layout/lunbo_1" />
+
+                    <include layout="@layout/lunbo_2" />
+
+                    <include layout="@layout/lunbo_3" />
+                </ViewFlipper>
+
+                <RelativeLayout
+                    android:id="@+id/dot_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|center"
+                    android:gravity="center"
+                    android:paddingBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/dot1"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_margin="20px"
+                        android:layout_toLeftOf="@+id/dot2"
+                        android:src="@drawable/dot_choose_bg" />
+
+                    <ImageView
+                        android:id="@+id/dot2"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_margin="20px"
+                        android:src="@drawable/dot_choose_bg" />
+
+                    <ImageView
+                        android:id="@+id/dot3"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_margin="20px"
+                        android:layout_toRightOf="@+id/dot2"
+                        android:src="@drawable/dot_choose_bg" />
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <View
+                android:id="@+id/view_white1"
+                android:layout_width="wrap_content"
+                android:layout_height="20px"
+                android:background="@color/lightWhite" />
+
+            <ImageView
+                android:id="@+id/ima_shijian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/shijianketang_02" />
+
+            <View
+                android:id="@+id/view_white2"
+                android:layout_width="match_parent"
+                android:layout_height="20px"
+                android:background="@color/lightWhite" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RadioGroup
+                    android:id="@+id/rg_choose"
+                    android:layout_width="match_parent"
+                    android:layout_height="88px"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_pro"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="项目推荐"
+                        android:textSize="17dp"
+                        android:textColor="@drawable/tab_menu_text" />
+
+                    <RadioButton
+                        android:id="@+id/rb_tea"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="导师推荐"
+                        android:textSize="17dp"
+                        android:textColor="@drawable/tab_menu_text" />
+                </RadioGroup>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/rg_choose">
+
+                    <ImageView
+                        android:id="@+id/image_cursor"
+                        android:layout_width="0dp"
+                        android:layout_height="8px"
+                        android:layout_below="@+id/rg_choose"
+                        android:layout_weight="1"
+                        android:scaleType="matrix"
+                        android:src="@drawable/line" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="8px"
+                        android:layout_below="@+id/rg_choose"
+                        android:layout_weight="1"
+                        android:background="@android:color/transparent"
+                        android:scaleType="matrix" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <com.example.xsy.hands_on.MyViewPager
+                android:id="@+id/tab_choose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>
